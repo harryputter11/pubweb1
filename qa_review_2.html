@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A 검토 2: 전원동의 요건과 최초 정관</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+        .content-wrapper {
+            padding: 40px;
+            min-height: 720px;
+            display: grid;
+            grid-rows: auto 1fr;
+            gap: 20px;
+        }
+        .comparison-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .vs-divider {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .initial-charter {
+            border-left: 6px solid #16a34a;
+        }
+        .charter-amendment {
+            border-left: 6px solid #dc2626;
+        }
+        .legal-analysis {
+            border-left: 6px solid #3b82f6;
+        }
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 20;
+            font-size: 24px;
+        }
+        .nav-button.left {
+            left: 20px;
+        }
+        .nav-button.right {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <!-- Header -->
+            <div class="text-center">
+                <h1 class="text-3xl font-bold text-gray-800 mb-1">Q&A 검토 2</h1>
+                <p class="text-lg text-gray-600">전원동의 요건과 최초 정관</p>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="grid grid-rows-2 gap-6 justify-evenly">
+                <!-- Top Row: Comparison -->
+                <div class="grid grid-cols-3 gap-6 items-center">
+                    <!-- Initial Charter -->
+                    <div class="comparison-card initial-charter p-4">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-file-contract text-green-600 text-3xl mb-2"></i>
+                            <h3 class="text-xl font-bold text-gray-800">최초 정관</h3>
+                            <p class="text-xs text-gray-600">Q&A 주장</p>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="bg-green-50 p-2 rounded">
+                                <h4 class="font-bold text-green-800 text-xs mb-1">동의 요건</h4>
+                                <p class="text-xs text-green-700">조합원 과반수 동의</p>
+                            </div>
+                            <div class="bg-green-50 p-2 rounded">
+                                <h4 class="font-bold text-green-800 text-xs mb-1">법적 근거</h4>
+                                <p class="text-xs text-green-700">도시정비법 제40조</p>
+                            </div>
+                            <div class="bg-green-50 p-2 rounded">
+                                <h4 class="font-bold text-green-800 text-xs mb-1">안전성</h4>
+                                <p class="text-xs text-green-700">"법적으로 안전하다"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VS -->
+                    <div class="text-center">
+                        <div class="vs-divider mx-auto mb-2">VS</div>
+                        <p class="text-gray-600 font-semibold text-sm">정관 변경과의 차이점</p>
+                    </div>
+
+                    <!-- Charter Amendment -->
+                    <div class="comparison-card charter-amendment p-4">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-edit text-red-600 text-3xl mb-2"></i>
+                            <h3 class="text-xl font-bold text-gray-800">정관 변경</h3>
+                            <p class="text-xs text-gray-600">판례 기준</p>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="bg-red-50 p-2 rounded">
+                                <h4 class="font-bold text-red-800 text-xs mb-1">동의 요건</h4>
+                                <p class="text-xs text-red-700">조합원 전원 동의</p>
+                            </div>
+                            <div class="bg-red-50 p-2 rounded">
+                                <h4 class="font-bold text-red-800 text-xs mb-1">법적 근거</h4>
+                                <p class="text-xs text-red-700">시행령 제63조 제2항 단서</p>
+                            </div>
+                            <div class="bg-red-50 p-2 rounded">
+                                <h4 class="font-bold text-red-800 text-xs mb-1">판례</h4>
+                                <p class="text-xs text-red-700">방배6구역, 신반포2차</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row: Legal Analysis -->
+                <div class="grid grid-cols-2 gap-6 justify-evenly">
+                    <!-- Q&A Claims -->
+                    <div class="comparison-card legal-analysis p-4">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
+                            <i class="fas fa-quote-left text-blue-600 mr-2"></i>
+                            Q&A 주장 분석
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-3 rounded">
+                                <h4 class="font-bold text-blue-800 mb-1 text-sm">핵심 논리</h4>
+                                <p class="text-xs text-blue-700">
+                                    "방배6구역과 신반포2차 판결은 \'정관 변경\'에 대한 것이며, 
+                                    최초 정관에 산정비율을 명시하는 것은 다르다"
+                                </p>
+                            </div>
+                            <div class="bg-green-50 border-l-4 border-green-500 p-3 rounded">
+                                <h4 class="font-bold text-green-800 mb-1 text-sm">추가 보호 장치</h4>
+                                <ul class="text-xs text-green-700 space-y-1">
+                                    <li>• 상가 조합원 과반수 동의 없이는 변경 불가 조항</li>
+                                    <li>• 공증을 통한 법적 효력 강화</li>
+                                    <li>• 서초진흥 판결의 신의성실 원칙</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Legal Rebuttal -->
+                    <div class="comparison-card legal-analysis p-4">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
+                            <i class="fas fa-balance-scale text-red-600 mr-2"></i>
+                            법적 반박 의견
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="bg-red-50 border-l-4 border-red-500 p-3 rounded">
+                                <h4 class="font-bold text-red-800 mb-1 text-sm">핵심 반박</h4>
+                                <p class="text-xs text-red-700">
+                                    법원은 \'정관 변경\'뿐만 아니라 \'법령이 정한 예외 사유를 벗어나 
+                                    상가 소유자에게 아파트를 공급하는 것\' 자체를 엄격하게 봄
+                                </p>
+                            </div>
+                            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-3 rounded">
+                                <h4 class="font-bold text-yellow-800 mb-1 text-sm">보호 장치의 한계</h4>
+                                <ul class="text-xs text-yellow-700 space-y-1">
+                                    <li>• 조합 내부 합의는 강행규정을 배제할 수 없음</li>
+                                    <li>• 공증은 내용의 적법성을 보장하지 않음</li>
+                                    <li>• 신의성실 원칙은 보충적 원칙에 불과</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-button left" onclick="location.href=\'qa_review_1.html\'">
+            &#10092;
+        </div>
+        <div class="nav-button right" onclick="location.href=\'qa_review_3.html\'">
+            &#10093;
+        </div>
+    </div>
+</body>
+</html>
+
+

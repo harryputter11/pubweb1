@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도시정비법 및 관련 법령</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+        .content-wrapper {
+            padding: 50px;
+            height: 100%;
+        }
+        .law-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 6px solid #1e40af;
+            transition: transform 0.3s ease;
+        }
+        .law-card:hover {
+            transform: translateY(-2px);
+        }
+        .principle-box {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            border-radius: 12px;
+        }
+        .exception-box {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            color: white;
+            border-radius: 12px;
+        }
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 20;
+            font-size: 24px;
+        }
+        .nav-button.left {
+            left: 20px;
+        }
+        .nav-button.right {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <!-- Header -->
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-gray-800 mb-2">도시정비법 및 관련 법령</h1>
+                <p class="text-xl text-gray-600">재건축 상가 아파트 분양의 법적 근거</p>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-2 gap-8 h-full">
+                <!-- Left Column: Legal Framework -->
+                <div class="space-y-6">
+                    <div class="law-card p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-balance-scale text-blue-600 mr-3"></i>
+                            도시정비법 시행령 제63조
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="principle-box p-4">
+                                <h4 class="font-bold text-lg mb-2">
+                                    <i class="fas fa-shield-alt mr-2"></i>원칙
+                                </h4>
+                                <p class="text-sm">상가 소유자에게는 <strong>상가를 공급</strong>하는 것이 원칙</p>
+                            </div>
+                            <div class="exception-box p-4">
+                                <h4 class="font-bold text-lg mb-2">
+                                    <i class="fas fa-exclamation-circle mr-2"></i>예외
+                                </h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>• 새로운 부대시설·복리시설을 건설하지 않는 경우</li>
+                                    <li>• 기존 시설 가액이 최소분양단위 추산액 × 정관비율보다 큰 경우</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="law-card p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-users text-red-600 mr-3"></i>
+                            조합원 전원동의 요건
+                        </h3>
+                        <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded">
+                            <p class="text-gray-700 text-sm">
+                                <strong>시행령 제63조 제2항 단서:</strong><br>
+                                "조합이 조합원 전원의 동의를 받아 그 기준을 따로 정하는 경우에는 그에 따른다"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Process Flow -->
+                <div class="space-y-6">
+                    <div class="law-card p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-route text-green-600 mr-3"></i>
+                            상가 아파트 분양 절차
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">1</div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-gray-800">법적 요건 확인</h4>
+                                    <p class="text-sm text-gray-600">시행령 제63조 예외 사유 해당 여부</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">2</div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-gray-800">정관 규정</h4>
+                                    <p class="text-sm text-gray-600">산정비율 등 기준 설정</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold">3</div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-gray-800">동의 요건</h4>
+                                    <p class="text-sm text-gray-600">조합원 전원동의 또는 과반수 동의</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold">4</div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-gray-800">분양 실행</h4>
+                                    <p class="text-sm text-gray-600">관리처분계획에 따른 분양</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="law-card p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-calculator text-purple-600 mr-3"></i>
+                            산정비율의 의미
+                        </h3>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-purple-600 mb-2">기존 상가 가액</div>
+                                <div class="text-xl text-gray-600 mb-2">÷</div>
+                                <div class="text-lg text-gray-700 mb-2">(최소분양단위 추산액 × <span class="text-red-600 font-bold">산정비율</span>)</div>
+                                <div class="text-xl text-gray-600 mb-2">&gt;</div>
+                                <div class="text-2xl font-bold text-green-600">1</div>
+                            </div>
+                            <p class="text-sm text-gray-600 text-center mt-4">
+                                산정비율이 낮을수록 아파트 분양 가능성 증가
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-button left" onclick="location.href='intro.html'">
+            &#10092;
+        </div>
+        <div class="nav-button right" onclick="location.href='case_analysis.html'">
+            &#10093;
+        </div>
+    </div>
+</body>
+</html>
+
+

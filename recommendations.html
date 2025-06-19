@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제언 및 대안</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+        .content-wrapper {
+            padding: 40px;
+            min-height: 720px;
+            display: grid;
+            grid-rows: auto 1fr;
+            gap: 20px;
+        }
+        .recommendation-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .priority-high {
+            border-left: 6px solid #dc2626;
+        }
+        .priority-medium {
+            border-left: 6px solid #f59e0b;
+        }
+        .priority-low {
+            border-left: 6px solid #16a34a;
+        }
+        .alternative-card {
+            border-left: 6px solid #3b82f6;
+        }
+        .step-number {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 20;
+            font-size: 24px;
+        }
+        .nav-button.left {
+            left: 20px;
+        }
+        .nav-button.right {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <!-- Header -->
+            <div class="text-center">
+                <h1 class="text-3xl font-bold text-gray-800 mb-1">제언 및 대안</h1>
+                <p class="text-lg text-gray-600">상가 소유주를 위한 실질적 권고사항</p>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="grid grid-rows-2 gap-6 justify-evenly">
+                <!-- Top Row: Priority Recommendations -->
+                <div class="grid grid-cols-3 gap-6">
+                    <!-- High Priority -->
+                    <div class="recommendation-card priority-high p-4">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-exclamation-circle text-red-600 text-2xl mr-3"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800">최우선 권고</h3>
+                                <p class="text-xs text-gray-600">즉시 실행 필요</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <div class="step-number">1</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-sm">법률 전문가 심층 자문</h4>
+                                    <p class="text-xs text-gray-600">
+                                        재건축 전문 변호사로부터 산정비율의 법적 안정성에 대한 명확한 의견 확보
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="step-number">2</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-sm">판례 정확한 이해</h4>
+                                    <p class="text-xs text-gray-600">
+                                        방배6구역, 신반포2차 등 관련 판례의 구체적 사실관계와 법원 판단 근거 파악
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Medium Priority -->
+                    <div class="recommendation-card priority-medium p-4">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-clock text-yellow-600 text-2xl mr-3"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800">중기 권고</h3>
+                                <p class="text-xs text-gray-600">단계적 추진</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <div class="step-number">3</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-sm">대안 시나리오 마련</h4>
+                                    <p class="text-xs text-gray-600">
+                                        상가 단독 재건축, 존치 후 리모델링 등 다양한 대안 검토
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="step-number">4</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-sm">협상력 강화 전략</h4>
+                                    <p class="text-xs text-gray-600">
+                                        법적 불확실성을 인지하고 현실적인 협상 목표 설정
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Long-term -->
+                    <div class="recommendation-card priority-low p-4">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-chart-line text-green-600 text-2xl mr-3"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800">장기 권고</h3>
+                                <p class="text-xs text-gray-600">지속적 모니터링</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <div class="step-number">5</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-sm">판례 동향 추적</h4>
+                                    <p class="text-xs text-gray-600">
+                                        목동6단지 등 유사 사례의 최종 법적 판단 결과 모니터링
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="step-number">6</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-sm">법령 개정 동향</h4>
+                                    <p class="text-xs text-gray-600">
+                                        도시정비법 관련 법령 개정 동향 및 정책 변화 추적
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row: Alternative Options -->
+                <div class="grid grid-cols-2 gap-6">
+                    <!-- Alternative Scenarios -->
+                    <div class="recommendation-card alternative-card p-4">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                            <i class="fas fa-route text-blue-600 mr-3"></i>
+                            대안 시나리오
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-3 rounded">
+                                <h4 class="font-bold text-blue-800 mb-1 text-sm">시나리오 1: 상가 단독 재건축</h4>
+                                <div class="grid grid-cols-2 gap-2 text-xs">
+                                    <div>
+                                        <p class="text-green-700 font-semibold">장점:</p>
+                                        <ul class="text-green-600 space-y-1">
+                                            <li>• 법적 안정성 확보</li>
+                                            <li>• 상가 특화 개발 가능</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="text-red-700 font-semibold">단점:</p>
+                                        <ul class="text-red-600 space-y-1">
+                                            <li>• 높은 사업비</li>
+                                            <li>• 복잡한 절차</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-green-50 border-l-4 border-green-500 p-3 rounded">
+                                <h4 class="font-bold text-green-800 mb-1 text-sm">시나리오 2: 존치 후 리모델링</h4>
+                                <div class="grid grid-cols-2 gap-2 text-xs">
+                                    <div>
+                                        <p class="text-green-700 font-semibold">장점:</p>
+                                        <ul class="text-green-600 space-y-1">
+                                            <li>• 낮은 비용</li>
+                                            <li>• 빠른 실행</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="text-red-700 font-semibold">단점:</p>
+                                        <ul class="text-red-600 space-y-1">
+                                            <li>• 제한적 개선</li>
+                                            <li>• 낮은 수익성</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-3 rounded">
+                                <h4 class="font-bold text-yellow-800 mb-1 text-sm">시나리오 3: 상가 전문 개발</h4>
+                                <div class="grid grid-cols-2 gap-2 text-xs">
+                                    <div>
+                                        <p class="text-green-700 font-semibold">장점:</p>
+                                        <ul class="text-green-600 space-y-1">
+                                            <li>• 전문성 활용</li>
+                                            <li>• 차별화 가능</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="text-red-700 font-semibold">단점:</p>
+                                        <ul class="text-red-600 space-y-1">
+                                            <li>• 시장 불확실성</li>
+                                            <li>• 전문 파트너 필요</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Decision Framework -->
+                    <div class="recommendation-card alternative-card p-4">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                            <i class="fas fa-decision-tree text-blue-600 mr-3"></i>
+                            의사결정 프레임워크
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="bg-purple-50 border-l-4 border-purple-500 p-3 rounded">
+                                <h4 class="font-bold text-purple-800 mb-2 text-sm">핵심 질문</h4>
+                                <ul class="text-xs text-purple-700 space-y-1">
+                                    <li>1. 법적 위험을 감수할 의향이 있는가?</li>
+                                    <li>2. 소송 비용과 시간을 투자할 수 있는가?</li>
+                                    <li>3. 대안 시나리오의 수익성은 어떠한가?</li>
+                                    <li>4. 아파트 측과의 협상력은 충분한가?</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-50 border-l-4 border-gray-500 p-3 rounded">
+                                <h4 class="font-bold text-gray-800 mb-2 text-sm">권고 결론</h4>
+                                <p class="text-xs text-gray-700">
+                                    <strong>신중한 접근:</strong> 통합 재건축의 이점은 인정하나, 
+                                    법적 안정성 확보 없이는 진행하지 않는 것을 권고
+                                </p>
+                            </div>
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-3 rounded">
+                                <h4 class="font-bold text-blue-800 mb-2 text-sm">실행 원칙</h4>
+                                <p class="text-xs text-blue-700">
+                                    충분한 법률 검토 → 대안 마련 → 협상 참여 → 결과 평가 → 최종 결정
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-button left" onclick="location.href=\'risks.html\'">
+            &#10092;
+        </div>
+        <div class="nav-button right" onclick="location.href=\'conclusion.html\'">
+            &#10093;
+        </div>
+    </div>
+</body>
+</html>
+

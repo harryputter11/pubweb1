@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서론 및 개요</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            padding: 60px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .geometric-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+        }
+        .title-text {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .subtitle-text {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+            color: #e2e8f0;
+        }
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-left: 6px solid #dc2626;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 20;
+            font-size: 24px;
+        }
+        .nav-button.left {
+            left: 20px;
+        }
+        .nav-button.right {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Geometric Background -->
+        <div class="geometric-bg">
+            <svg width="100%" height="100%" viewBox="0 0 1280 720">
+                <polygon points="0,0 400,0 300,200 0,150" fill="rgba(255,255,255,0.05)"/>
+                <polygon points="1280,720 880,720 980,520 1280,570" fill="rgba(255,255,255,0.05)"/>
+                <circle cx="1100" cy="150" r="80" fill="rgba(255,255,255,0.03)"/>
+                <circle cx="200" cy="600" r="60" fill="rgba(255,255,255,0.03)"/>
+            </svg>
+        </div>
+
+        <div class="content-wrapper">
+            <!-- Main Title -->
+            <div class="text-center mb-12">
+                <h1 class="title-text text-5xl mb-6">
+                    여의도 진주상가 통합 재건축
+                </h1>
+                <h2 class="title-text text-4xl mb-4">
+                    Q&A 법적 검토 및 반박
+                </h2>
+                <p class="subtitle-text text-xl">
+                    도시정비법 및 관련 판례를 중심으로 한 종합 분석
+                </p>
+            </div>
+
+            <!-- Key Points Box -->
+            <div class="highlight-box p-8 mx-auto max-w-4xl">
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-gavel text-red-600 mr-3"></i>
+                            검토 범위
+                        </h3>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mr-2 mt-1"></i>
+                                도시정비법 시행령 제63조 분석
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mr-2 mt-1"></i>
+                                방배6구역, 신반포2차 판례 검토
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mr-2 mt-1"></i>
+                                목동6단지 사례 분석
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-exclamation-triangle text-red-600 mr-3"></i>
+                            핵심 쟁점
+                        </h3>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-arrow-right text-red-600 mr-2 mt-1"></i>
+                                상가 소유주 아파트 분양 가능성
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-arrow-right text-red-600 mr-2 mt-1"></i>
+                                조합원 전원동의 요건
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-arrow-right text-red-600 mr-2 mt-1"></i>
+                                산정비율의 법적 안정성
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Info -->
+            <div class="text-center mt-12">
+                <p class="subtitle-text text-lg">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    2025년 6월 18일 | 
+                    <i class="fas fa-user mr-2 ml-4"></i>
+                    Manus AI 법률 분석팀
+                </p>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-button right" onclick="location.href='legal_framework.html'">
+            &#10093;
+        </div>
+    </div>
+</body>
+</html>
+

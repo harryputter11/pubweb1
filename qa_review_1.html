@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A 검토 1: 상가 소유주 아파트 분양 가능성</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+        .content-wrapper {
+            padding: 50px;
+            height: 100%;
+        }
+        .qa-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        .qa-question {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+        .qa-answer-summary {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 20px;
+        }
+        .qa-analysis-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #dc2626;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .qa-analysis-list li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #475569;
+        }
+        .qa-analysis-list strong {
+            color: #1e3a8a;
+        }
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 20;
+            font-size: 24px;
+        }
+        .nav-button.left {
+            left: 20px;
+        }
+        .nav-button.right {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <!-- Header -->
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-gray-800 mb-2">Q&A 검토 1: 상가 소유주 아파트 분양 가능성</h1>
+                <p class="text-xl text-gray-600">"상가 소유주도 아파트를 받을 수 있나요?"</p>
+            </div>
+
+            <!-- Main Content -->
+            <div class="qa-section">
+                <h2 class="qa-question">Q. 상가 소유주도 아파트를 받을 수 있나요?</h2>
+                <p class="qa-answer-summary">A. 네, 받을 수 있습니다. (산정비율 1보다 낮게 정하면 가능, 목동6단지 사례)</p>
+
+                <h3 class="qa-analysis-title">
+                    <i class="fas fa-exclamation-triangle mr-3"></i>
+                    법적 검토 및 반박
+                </h3>
+                <ul class="qa-analysis-list">
+                    <li>
+                        <strong>원칙과 예외의 엄격한 해석:</strong> 도시정비법 시행령 제63조 제2항은 상가 소유자에게 상가 공급을 원칙으로 하며, 아파트 분양은 <strong>매우 엄격한 예외 요건</strong> 하에 허용됩니다. 단순히 '산정비율'을 낮추는 것만으로는 아파트 분양 자격이 자동 부여되지 않습니다.
+                    </li>
+                    <li>
+                        <strong>'산정비율'의 법적 안정성 불확실:</strong> 최근 판례들은 '정관등으로 정하는 비율'을 통해 상가 소유자에게 아파트를 공급하는 것에 대해 <strong>매우 엄격한 입장</strong>을 취합니다. 이는 법령이 정한 예외 사유를 벗어나 아파트를 공급하기 위한 목적으로 활용될 경우, <strong>'조합원 전원의 동의'가 필요한 '다른 기준'</strong>에 해당한다고 보고 있습니다.
+                    </li>
+                    <li>
+                        <strong>목동6단지 사례의 한계:</strong> 목동6단지 사례는 조합설립 인가를 받았다는 점에서 의미가 있으나, 이는 해당 조항의 <strong>법적 안정성을 완전히 보장하지 않습니다.</strong> 재건축 사업은 장기간 진행되며, 향후 법적 분쟁 시 법원이 해당 조항의 유효성을 다시 판단할 수 있습니다. 방배6구역 및 신반포2차 판례에서 보듯이, 법원은 상가조합원에게 아파트를 공급하는 예외규정을 매우 제한적으로 해석합니다.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-button left" onclick="location.href='case_analysis.html'">
+            &#10092;
+        </div>
+        <div class="nav-button right" onclick="location.href='qa_review_2.html'">
+            &#10093;
+        </div>
+    </div>
+</body>
+</html>
+
+

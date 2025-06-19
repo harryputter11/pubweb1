@@ -25,9 +25,8 @@
 ```
 mysite/
 ├── .git/              # Git 저장소
-├── .gitignore          # Git 무묀킌 곌
-
-├── README.md           # 이 파일
+├── .gitignore         # Git 무시 규칙
+├── README.md          # 이 파일
 └── ...                # 프로젝트 파일들
 ```
 
