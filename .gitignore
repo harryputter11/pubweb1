@@ -1,0 +1,100 @@
+# OS 생성 파일
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE 파일
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 로그 및 임시 파일
+*.log
+*.tmp
+*.temp
+logs/
+tmp/
+
+# 환경 설정 파일
+.env
+.env.local
+.env.production
+.env.staging
+
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 패키지 파일
+*.zip
+*.tar.gz
+*.rar
+
+# 빌드 출력
+dist/
+build/
+out/
+
+# 캐시 파일
+.cache/
+.parcel-cache/
+
+# 커버리지 리포트
+coverage/
+.nyc_output/
+
+# 의존성
+vendor/
+composer.lock
+
+# 런타임 데이터
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# 데이터베이스 파일
+*.sqlite
+*.db
+
+# 백업 파일
+*.backup
+*.bak
+
+# 파일 업로드
+uploads/
+storage/uploads/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+
+# 기타
+*.config
+.secret
+
+# 큰 미디어 파일
+*.mp3
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.pptx
+*.ppt
+*.pdf
+*.docx
+*.doc
